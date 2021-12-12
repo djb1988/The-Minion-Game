@@ -1,0 +1,35 @@
+def minion_game(string):
+    # your code goes here
+    Kevin_score = 0
+    Stuart_score = 0 
+    index_of_count = 0
+    list_of_vowels = ["A","E","I","O","U"]
+    for x in string:
+        if  x not in list_of_vowels  :
+             Stuart_score += len(string) - string.index(x, index_of_count )
+             index_of_count = string.index(x,index_of_count) + 1
+             
+             
+    
+    
+    
+    index_of_count = 0
+    
+    for x in string:
+        
+        if x in list_of_vowels :
+            Kevin_score += len(string) - string.index(x, index_of_count )
+            index_of_count = string.index(x,index_of_count) + 1
+            
+        
+    if Kevin_score > Stuart_score:
+        print "Kevin {}".format(Kevin_score)
+    if Stuart_score > Kevin_score:
+       print "Stuart {}".format(Stuart_score)
+    if Kevin_score == Stuart_score:
+        print "Draw" 
+    
+    
+if __name__ == '__main__':
+    s = raw_input()
+    minion_game(s)
